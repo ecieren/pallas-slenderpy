@@ -1,12 +1,12 @@
 # -- env name
 $DEF_NAME = "pallas-slenderpy-uv"
 
-$PYTHON_VERSION = "--python-preference=system"
+# $PYTHON_VERSION = "--python-preference=system"
 # $PYTHON_VERSION = "--python 3.11"
 # $PYTHON_VERSION="--python 3.11"
 # $PYTHON_VERSION="--python 3.12"
 # $PYTHON_VERSION="--python 3.13"
-# $PYTHON_VERSION="--python 3.14"
+$PYTHON_VERSION="--python 3.14"
 
 # -----------------------------------------------------------------------------
 
@@ -26,7 +26,6 @@ if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
 }
 
 # -- setup uv env
-# Note: On utilise Invoke-Expression pour gérer les arguments dynamiques proprement
 $VENV_PATH = Join-Path $ENV_DIR $DEF_NAME
 Invoke-Expression "uv venv --clear $VENV_PATH $PYTHON_VERSION"
 
